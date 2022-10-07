@@ -16,9 +16,9 @@ see your caught pokemon move as overworld pokemon and interact with them.
 ## INSTALLATION
 - Add Graphics: Either get the resources from Gen 8 Project https://reliccastle.com/resources/670/ and install the "Graphics/Characters" folder in your game file system. Or you place your own sprites for your pokemon/fakemon with the right names in your "\Graphics\Characters\Follower" folder and your shiny sprites in your "\Graphics\Characters\Follower shiny" folder. 
 The right name of sprites is:
- usual form     - SPECIES.png   where SPECIES is the species name in capslock (e.g. PIDGEY.png)
- alternate form - SPECIES_n.png where n is the number of the form (e.g. PIKACHU_3.png)
- female form    - SPECIES_female.png or SPECIES_n_female (e.g. PIDGEY_female.png or PIKACHU_3_female.png)
+   - usual form     - SPECIES.png   where SPECIES is the species name in capslock (e.g. PIDGEY.png)
+  - alternate form - SPECIES_n.png where n is the number of the form (e.g. PIKACHU_3.png)
+  - female form    - SPECIES_female.png or SPECIES_n_female (e.g. PIDGEY_female.png or PIKACHU_3_female.png)
 - Create Maps: build and design a map for each storage box and keep the corresponding map ids in mind . Also make sure that these maps are accessible for the player and connected to the ordinary maps, somehow.
 - Add Script
 - Change Settings: Open the settings.rb file in the folder and write down the map ids in the parameter STORAGE_MAPS and change the parameters in the settings section therein as you like. Details descriptions about the parameters can be found there as well. 
