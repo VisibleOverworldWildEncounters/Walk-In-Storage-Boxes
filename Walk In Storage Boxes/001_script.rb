@@ -96,28 +96,24 @@ end
 
 # remove 
 EventHandlers.add(:on_leave_tile, :remove_spawned_box_pokemon,
-  proc { |thisEvent, oldMap, oldX, oldY|
+  proc { |thisEvent, oldMap_id, oldX, oldY|
     next if !thisEvent
     next if !thisEvent.is_a?(Game_Player)
-    next if oldMap == $game_map.map_id
+    next if oldMap_id == $game_map.map_id
     
     
     #remove_box_pokemon_events(oldMap)
     #remove_sign_events(oldMap)
     if $map_factory
-      for map in $map_factory.maps
-        if map.map_id == oldMap 
-          oldMap = map
-          break
-        end
+      oldMap = $map_factory.getMap(oldMap_id,false)
+      if oldMap.is_a?(Game_Map)
+        oldMap.remove_box_pokemon_events
+        # alternatively: updating the sprites (old and slow but working):
+        #$scene.disposeSpritesets
+        #$scene.createSpritesets
+        next
       end
-    else
-      raise ArgumentError.new(_INTL("Actually, this should not be possible"))
-    end
-    oldMap.remove_box_pokemon_events
-    # alternatively: updating the sprites (old and slow but working):
-    $scene.disposeSpritesets
-    $scene.createSpritesets
+    raise ArgumentError.new(_INTL("Actually, this should not be possible"))    
   }
 )
 
