@@ -100,12 +100,10 @@ EventHandlers.add(:on_leave_tile, :remove_spawned_box_pokemon,
     next if !thisEvent
     next if !thisEvent.is_a?(Game_Player)
     next if oldMap_id == $game_map.map_id
-    
-    
     #remove_box_pokemon_events(oldMap)
     #remove_sign_events(oldMap)
     if $map_factory
-      oldMap = $map_factory.getMap(oldMap_id,false)
+      oldMap = $map_factory.getMap(oldMap_id)
       if oldMap.is_a?(Game_Map)
         oldMap.remove_box_pokemon_events
         # alternatively: updating the sprites (old and slow but working):
