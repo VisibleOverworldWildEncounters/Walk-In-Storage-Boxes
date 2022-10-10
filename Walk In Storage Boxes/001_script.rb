@@ -113,6 +113,7 @@ EventHandlers.add(:on_leave_tile, :remove_spawned_box_pokemon,
         #$scene.createSpritesets
         next
       end
+    end
     raise ArgumentError.new(_INTL("Actually, this should not be possible"))    
   }
 )
